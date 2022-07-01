@@ -3,10 +3,10 @@ import css from './Header.module.css';
 
 function Header() {
   return (
-    <header>
+    <header className={css['header']}>
       <nav className={css['main-nav']}>
         <div>
-          <img src='' alt='logo' />
+          <img src='./assets/globe.png' alt='logo' />
         </div>
         <div className={css['nav-link-container']}>
           <NavLink className={css['nav-link']} to={'/register'}>
@@ -15,7 +15,7 @@ function Header() {
           <NavLink className={css['nav-link']} to={'/login'}>
             Login
           </NavLink>
-          <NavLink className={css['nav-link']} to={'/home'}>
+          <NavLink className={css['nav-link']} to={'/'}>
             Home
           </NavLink>
           <NavLink className={css['nav-link']} to={'/add'}>
