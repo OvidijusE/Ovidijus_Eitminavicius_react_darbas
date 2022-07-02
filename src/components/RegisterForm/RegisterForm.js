@@ -33,8 +33,8 @@ function RegisterForm() {
       console.log('values ===', values);
       console.log('valuesCopy ===', valuesCopy);
       const registerResult = await myFetch(`${baseUrl}/register`, 'POST', valuesCopy);
-      if (registerResult.succcess) {
-        ctx.register(registerResult.token, valuesCopy.email);
+      if (registerResult.changes === 1) {
+        ctx.login(registerResult.token, valuesCopy.email);
         history.replace('/login');
       }
       console.log('registerResult ===', registerResult);
