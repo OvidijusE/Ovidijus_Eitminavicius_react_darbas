@@ -26,14 +26,14 @@ function LoginForm() {
       const loginResult = await myFetch(`${baseUrl}v1/auth/login`, 'POST', values);
       if (loginResult.msg === 'Successfully logged in') {
         ctx.login(loginResult.token, values.email);
-        history.replace('/');
+        history.replace('/home');
       }
       console.log('loginResult ===', loginResult);
       if (!loginResult.token) {
         console.log('login failed');
         return;
       }
-      ctx.login(loginResult.token);
+      // ctx.login(loginResult.token);
 
       console.log('submiting values ===', values);
     },

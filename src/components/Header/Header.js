@@ -26,7 +26,7 @@ function Header(props) {
 
           {isUserLoggedIn && (
             <>
-              <NavLink className={css['nav-link']} to={'/'}>
+              <NavLink className={css['nav-link']} to={'/home'}>
                 Home
               </NavLink>
               <NavLink className={css['nav-link']} to={'/add'}>
