@@ -16,3 +16,12 @@
   text-decoration: none;
   margin: 0.2rem;
 }
+
+.user-email {
+  margin: 0.2rem;
+}
+
+.nav-link-container {
+  display: flex;
+  flex-direction: row;
+}

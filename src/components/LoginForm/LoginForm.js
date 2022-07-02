@@ -23,18 +23,17 @@ function LoginForm() {
     }),
 
     onSubmit: async (values) => {
-      const loginResult = await myFetch(`${baseUrl}/login`, 'POST', values);
-      if (loginResult.success) {
+      const loginResult = await myFetch(`${baseUrl}v1/auth/login`, 'POST', values);
+      if (loginResult.msg === 'Successfully logged in') {
         ctx.login(loginResult.token, values.email);
-        history.replace('/home');
+        history.replace('/');
       }
-      console.log('registerResult ===', loginResult);
+      console.log('loginResult ===', loginResult);
       if (!loginResult.token) {
         console.log('login failed');
         return;
       }
-      //   ctx.login(loginResult.token);
-      console.log('registerResult ===', loginResult);
+      ctx.login(loginResult.token);
 
       console.log('submiting values ===', values);
     },
