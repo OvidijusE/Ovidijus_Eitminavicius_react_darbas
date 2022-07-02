@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 
 import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetch } from '../../utils';
+import Button from '../UI/Button/Button';
 
 import css from './RegisterForm.module.css';
 
@@ -20,7 +21,7 @@ function RegisterForm() {
     initialValues: initValues,
     validationSchema: Yup.object({
       email: Yup.string().email('Please check your email').required(),
-      password: Yup.string().min(4, 'At least 8 characters').max(10).required(),
+      password: Yup.string().min(4, 'At least 4 characters').max(20).required(),
       repeatPassword: Yup.string()
         .required()
         .oneOf([Yup.ref('password'), null], 'Passwords must match!'),
@@ -55,17 +56,20 @@ function RegisterForm() {
     }
   }
 
-  function rightClassesForInput(field) {
-    let resultClasses = css['form-control'];
+  // function rightClassesForInput(field) {
+  //   let resultClasses = 'email';
 
-    if (formik.touched[field]) {
-      resultClasses += formik.errors[field] ? ' is-invalid' : ' is-valid';
-    }
+  //   if (formik.touched[field] && formik.errors[field]) {
+  //     resultClasses += css['invalid'];
+  //   }
+  //   if (formik.touched[field] && formik.errors[field]) {
+  //     resultClasses += css['valid'];
+  //   }
 
-    return resultClasses;
-  }
+  //   return resultClasses;
+  // }
   return (
-    <div className={css['container']}>
+    <div className={css['form-container']}>
       <h1 className={css['form-title']}>Register here</h1>
 
       <form onSubmit={formik.handleSubmit} onBlur={matchPass} className={css['register-form']}>
@@ -76,11 +80,14 @@ function RegisterForm() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             type='email'
-            className={rightClassesForInput('email')}
+            // className={rightClassesForInput('email')}
+            className={formik.touched.email && formik.errors.email ? css['invalid'] : ''}
             id='email'
             name='email'
           />
-          <div className={css['invalid-feedback']}>{formik.errors.email}</div>
+          {formik.touched.email && formik.errors.email && (
+            <p className={css['error-msg']}>{formik.errors.email}</p>
+          )}
         </div>
         <div className={css['form-group']}>
           <label htmlFor='password'>Password</label>
@@ -89,11 +96,13 @@ function RegisterForm() {
             onBlur={formik.handleBlur}
             value={formik.values.password}
             type='password'
-            className={rightClassesForInput('password')}
+            className={formik.touched.password && formik.errors.password ? css['invalid'] : ''}
             id='password'
             name='password'
           />
-          <div className={css['invalid-feedback']}>{formik.errors.password}</div>
+          {formik.touched.password && formik.errors.password && (
+            <p className={css['error-msg']}>{formik.errors.password}</p>
+          )}
         </div>
         <div className={css['form-group']}>
           <label htmlFor='repeatPassword'>Repeat Password</label>
@@ -102,15 +111,19 @@ function RegisterForm() {
             onBlur={formik.handleBlur}
             value={formik.values.repeatPassword}
             type='password'
-            className={rightClassesForInput('repeatPassword')}
+            className={
+              formik.touched.repeatPassword && formik.errors.repeatPassword ? css['invalid'] : ''
+            }
             id='repeatPassword'
             name='repeatPassword'
           />
-          <div className={css['invalid-feedback']}>{formik.errors.repeatPassword}</div>
+          {formik.touched.repeatPassword && formik.errors.repeatPassword && (
+            <p className={css['error-msg']}>{formik.errors.repeatPassword}</p>
+          )}
         </div>
-        <button type='submit' className={css['button']}>
+        <Button submit primary>
           Register
-        </button>
+        </Button>
       </form>
     </div>
   );
