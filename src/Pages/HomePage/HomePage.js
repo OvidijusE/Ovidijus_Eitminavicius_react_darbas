@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import { useAuthCtx } from '../../store/authContext';
 import { useHistory } from 'react-router-dom';
 import { baseUrl, myFetchAuth } from '../../utils';
+import Card from '../../components/Card/Card';
+import css from './HomePage.module.css';
 
 function HomePage() {
   const history = useHistory();
   const { token } = useAuthCtx();
   if (!token) history.push('/login');
-  // console.log('token ===', token);
   const [skills, setSkills] = useState([]);
 
   const getSkills = async () => {
@@ -23,8 +24,13 @@ function HomePage() {
     if (token) getSkills();
   }, []);
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className={css['cards-container']}>
+      <h1 className={css['title']}>Home Page</h1>
+      <div className={css['cards-output']}>
+        {skills.map((sObj) => (
+          <Card key={sObj.id} {...sObj} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -2,19 +2,22 @@ POST https://autumn-delicate-wilderness.glitch.me/v1/auth/login
 Content-Type: application/json
 
 {
-"email": "testas8@testas.lt",
+"email": "testas10@testas.lt",
 "password": "123456"
 }
 
 ###
 GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU2LCJlbWFpbCI6InRlc3RhczhAdGVzdGFzLmx0IiwiaWF0IjoxNjU2ODQ0MzMyfQ.dMOdXMYLTCzR3VQjzVWYnDJop7HPLG-M9wz4tOULMNA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1Njg1NjM2NH0.dd4CKHfPE0t9nPWl3-hxc-36ljyA9t_MsoWkm4ueqZs
 
 ###
 POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU2LCJlbWFpbCI6InRlc3RhczhAdGVzdGFzLmx0IiwiaWF0IjoxNjU2ODQ0MzMyfQ.dMOdXMYLTCzR3VQjzVWYnDJop7HPLG-M9wz4tOULMNA
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1Njg1NjM2NH0.dd4CKHfPE0t9nPWl3-hxc-36ljyA9t_MsoWkm4ueqZs
 
 {
-"title": "testas",
-"description": "pirmas bandymas"
+"title": "testas6",
+"description": "aprasymas6"
+
 }
+

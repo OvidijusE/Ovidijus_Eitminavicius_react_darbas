@@ -1,7 +1,11 @@
+import AddForm from '../../components/AddForm/AddForm';
+import css from './AddPage.module.css';
+
 function AddPage() {
   return (
-    <div>
+    <div className={css['cards-container']}>
       <h1>Add page</h1>
+      <AddForm />
     </div>
   );
 }

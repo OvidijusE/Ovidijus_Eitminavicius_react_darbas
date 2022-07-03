@@ -25,6 +25,8 @@
   border: 0.01rem solid tomato;
 }
 
-.register-form input {
+.login-form input {
   outline: none;
+  border-radius: 0.2rem;
+  min-height: 1.3rem;
 }

@@ -62,7 +62,7 @@ function LoginForm() {
     <div className={css['form-container']}>
       <h1 className={css['form-title']}>Login page</h1>
 
-      <form onSubmit={formik.handleSubmit} className={css['register-form']}>
+      <form onSubmit={formik.handleSubmit} className={css['login-form']}>
         <div className={css['form-group']}>
           <label htmlFor='email'>Email</label>
           <input
