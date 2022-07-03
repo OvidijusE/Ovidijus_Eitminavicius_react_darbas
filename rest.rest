@@ -1,0 +1,20 @@
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/login
+Content-Type: application/json
+
+{
+"email": "testas8@testas.lt",
+"password": "123456"
+}
+
+###
+GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU2LCJlbWFpbCI6InRlc3RhczhAdGVzdGFzLmx0IiwiaWF0IjoxNjU2ODQ0MzMyfQ.dMOdXMYLTCzR3VQjzVWYnDJop7HPLG-M9wz4tOULMNA
+
+###
+POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU2LCJlbWFpbCI6InRlc3RhczhAdGVzdGFzLmx0IiwiaWF0IjoxNjU2ODQ0MzMyfQ.dMOdXMYLTCzR3VQjzVWYnDJop7HPLG-M9wz4tOULMNA
+
+{
+"title": "testas",
+"description": "pirmas bandymas"
+}

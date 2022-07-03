@@ -1,11 +1,9 @@
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-
 import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetch } from '../../utils';
 import Button from '../UI/Button/Button';
-
 import css from './RegisterForm.module.css';
 
 const initValues = {
