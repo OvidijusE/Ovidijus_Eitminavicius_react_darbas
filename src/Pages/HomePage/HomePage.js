@@ -26,10 +26,13 @@ function HomePage() {
   useEffect(() => {
     if (token) getSkills();
   }, []);
+
   return (
     <div className={css['cards-container']}>
       <h1 className={css['title']}>Home Page</h1>
       <div className={css['cards-output']}>
+        {/* {skills.length === 0 && <h2>No skills found! Add a new one.</h2>} */}
+        {skills.length === 0 && <h2>Loading skills...</h2>}
         {skills.map((sObj) => (
           <Card key={sObj.id} {...sObj} />
         ))}
