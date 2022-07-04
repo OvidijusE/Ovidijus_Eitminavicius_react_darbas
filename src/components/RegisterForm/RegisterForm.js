@@ -76,8 +76,7 @@ function RegisterForm() {
   // }
   return (
     <div className={css['form-container']}>
-      {/* <Toaster /> */}
-      <h1 className={css['form-title']}>Register here</h1>
+      <h3 className={css['form-title']}>Register here</h3>
 
       <form onSubmit={formik.handleSubmit} onBlur={matchPass} className={css['register-form']}>
         <div className={css['form-group']}>

@@ -8,6 +8,7 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import toast, { Toaster } from 'react-hot-toast';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <NotFoundPage />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
