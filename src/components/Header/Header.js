@@ -1,3 +1,4 @@
+import toast, { Toaster } from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 import { useAuthCtx } from '../../store/authContext';
 import css from './Header.module.css';
@@ -32,7 +33,16 @@ function Header(props) {
               <NavLink className={css['nav-link']} to={'/add'}>
                 Add
               </NavLink>
-              <NavLink onClick={logout} className={css['nav-link']} to={'/login'}>
+              <NavLink
+                onClick={() => {
+                  logout();
+                  isUserLoggedIn
+                    ? toast.success('You are logged out')
+                    : toast.error('Error in logout');
+                }}
+                className={css['nav-link']}
+                to={'/login'}
+              >
                 Logout
               </NavLink>
             </>

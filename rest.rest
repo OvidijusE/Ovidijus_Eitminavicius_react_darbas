@@ -8,16 +8,16 @@ Content-Type: application/json
 
 ###
 GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1Njg1NjM2NH0.dd4CKHfPE0t9nPWl3-hxc-36ljyA9t_MsoWkm4ueqZs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1NjkyMjk0M30.ZEhAQjknrmPTDegS4y1EclKwTi94vKDyLQg0OjeWzxI
 
 ###
 POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1Njg1NjM2NH0.dd4CKHfPE0t9nPWl3-hxc-36ljyA9t_MsoWkm4ueqZs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1NjkyMjk0M30.ZEhAQjknrmPTDegS4y1EclKwTi94vKDyLQg0OjeWzxI
 
 {
-"title": "testas6",
-"description": "aprasymas6"
+"title": "testas10",
+"description": "aprasymas10"
 
 }
 
