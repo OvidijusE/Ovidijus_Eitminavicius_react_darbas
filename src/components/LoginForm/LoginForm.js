@@ -6,6 +6,7 @@ import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetch } from '../../utils';
 import Button from '../UI/Button/Button';
 import css from './LoginForm.module.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 const initValues = {
   email: '',
@@ -25,12 +26,13 @@ function LoginForm() {
     onSubmit: async (values) => {
       const loginResult = await myFetch(`${baseUrl}v1/auth/login`, 'POST', values);
       if (loginResult.msg === 'Successfully logged in') {
+        toast.success('Login successfull!');
         ctx.login(loginResult.token, values.email);
         history.replace('/home');
       }
       console.log('loginResult ===', loginResult);
       if (!loginResult.token) {
-        console.log('login failed');
+        toast.error('Login failed!');
         return;
       }
       // ctx.login(loginResult.token);

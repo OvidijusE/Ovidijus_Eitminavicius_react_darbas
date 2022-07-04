@@ -5,6 +5,7 @@ import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetch } from '../../utils';
 import Button from '../UI/Button/Button';
 import css from './RegisterForm.module.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 const initValues = {
   email: '',
@@ -32,6 +33,7 @@ function RegisterForm() {
       console.log('valuesCopy ===', valuesCopy);
       const registerResult = await myFetch(`${baseUrl}v1/auth/register`, 'POST', valuesCopy);
       if (registerResult.changes === 1) {
+        toast.success('Register successfully! Redirecting to login page...');
         ctx.login(registerResult.token, valuesCopy.email);
         history.replace('/login');
       }
@@ -42,6 +44,12 @@ function RegisterForm() {
       // }
       // ctx.register(registerResult.token);
       // console.log('registerResult ===', registerResult);
+      if (registerResult.changes === 0) {
+        toast.error('Register failed. Try again.');
+        return;
+      }
+
+      console.log('registerResult ===', registerResult);
 
       console.log('submiting values ===', values);
     },
@@ -68,6 +76,7 @@ function RegisterForm() {
   // }
   return (
     <div className={css['form-container']}>
+      {/* <Toaster /> */}
       <h1 className={css['form-title']}>Register here</h1>
 
       <form onSubmit={formik.handleSubmit} onBlur={matchPass} className={css['register-form']}>

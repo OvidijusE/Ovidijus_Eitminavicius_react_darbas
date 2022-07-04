@@ -7,10 +7,12 @@ import HomePage from './Pages/HomePage/HomePage';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className='App'>
+      <Toaster />
       <Header />
       <Switch>
         <Route path={'/register'}>

@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { baseUrl, myFetchAuth } from '../../utils';
 import Card from '../../components/Card/Card';
 import css from './HomePage.module.css';
+// import toast, { Toaster } from 'react-hot-toast';
 
 function HomePage() {
   const history = useHistory();
@@ -14,9 +15,11 @@ function HomePage() {
 
   const getSkills = async () => {
     const fetchResult = await myFetchAuth(`${baseUrl}v1/content/skills`, token);
+
     console.log('fetchResult ===', fetchResult);
     if (Array.isArray(fetchResult)) {
       setSkills(fetchResult);
+      // toast.loading('Loading skills...');
     }
   };
 

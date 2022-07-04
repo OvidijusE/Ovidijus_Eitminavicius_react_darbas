@@ -4,7 +4,7 @@ import css from './AddPage.module.css';
 function AddPage() {
   return (
     <div className={css['cards-container']}>
-      <h1>Add page</h1>
+      <h1 className={css['title']}>Add page</h1>
       <AddForm />
     </div>
   );
