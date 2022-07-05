@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetchAuth } from '../../utils';
 import Button from '../UI/Button/Button';
@@ -24,7 +24,7 @@ function AddForm() {
         .required(),
       description: Yup.string()
         .min(4, 'At least 4 characters')
-        .max(30, 'Maximum description length reached')
+        .max(50, 'Maximum description length reached')
         .required(),
     }),
 
@@ -45,18 +45,6 @@ function AddForm() {
     },
   });
 
-  // function rightClassesForInput(field) {
-  //   let resultClasses = 'email';
-
-  //   if (formik.touched[field] && formik.errors[field]) {
-  //     resultClasses += css['invalid'];
-  //   }
-  //   if (formik.touched[field] && formik.errors[field]) {
-  //     resultClasses += css['valid'];
-  //   }
-
-  //   return resultClasses;
-  // }
   return (
     <div className={css['form-container']}>
       <h3 className={css['form-title']}>Enter skills</h3>
@@ -69,7 +57,6 @@ function AddForm() {
             onBlur={formik.handleBlur}
             value={formik.values.title}
             type='text'
-            // className={rightClassesForInput('email')}
             className={formik.touched.title && formik.errors.title ? css['invalid'] : ''}
             id='title'
             name='title'

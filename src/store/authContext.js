@@ -19,7 +19,6 @@ const AuthProvider = ({ children }) => {
     setToken(receivedToken);
     setUserEmail(receivedEmail);
     localStorage.setItem('token', receivedToken);
-    console.log('receivedEmail ===', receivedEmail);
   };
   const logout = () => {
     setToken(null);

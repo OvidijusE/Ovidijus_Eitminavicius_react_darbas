@@ -1,12 +1,11 @@
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-
 import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetch } from '../../utils';
 import Button from '../UI/Button/Button';
 import css from './LoginForm.module.css';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const initValues = {
   email: '',
@@ -30,36 +29,13 @@ function LoginForm() {
         ctx.login(loginResult.token, values.email);
         history.replace('/home');
       }
-      console.log('loginResult ===', loginResult);
       if (!loginResult.token) {
         toast.error('Login failed!');
         return;
       }
-      // ctx.login(loginResult.token);
-
-      console.log('submiting values ===', values);
     },
   });
 
-  //   function matchPass() {
-  //     const { password, repeatPassword } = initValues;
-  //     if (password !== repeatPassword) {
-  //       console.log('Passwords does not match');
-  //     }
-  //   }
-
-  // function rightClassesForInput(field) {
-  //   let resultClasses = 'email';
-
-  //   if (formik.touched[field] && formik.errors[field]) {
-  //     resultClasses += css['invalid'];
-  //   }
-  //   if (formik.touched[field] && formik.errors[field]) {
-  //     resultClasses += css['valid'];
-  //   }
-
-  //   return resultClasses;
-  // }
   return (
     <div className={css['form-container']}>
       <h3 className={css['form-title']}>Login here</h3>
@@ -72,7 +48,6 @@ function LoginForm() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             type='email'
-            // className={rightClassesForInput('email')}
             className={formik.touched.email && formik.errors.email ? css['invalid'] : ''}
             id='email'
             name='email'

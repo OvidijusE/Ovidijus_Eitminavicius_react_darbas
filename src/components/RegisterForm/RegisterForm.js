@@ -1,11 +1,10 @@
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetch } from '../../utils';
 import Button from '../UI/Button/Button';
 import css from './RegisterForm.module.css';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const initValues = {
   email: '',
@@ -15,7 +14,6 @@ const initValues = {
 
 function RegisterForm() {
   const history = useHistory();
-  const ctx = useAuthCtx();
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -29,23 +27,15 @@ function RegisterForm() {
     onSubmit: async (values) => {
       const valuesCopy = { ...values };
       delete valuesCopy['repeatPassword'];
-      console.log('values ===', values);
-      console.log('valuesCopy ===', valuesCopy);
       const registerResult = await myFetch(`${baseUrl}v1/auth/register`, 'POST', valuesCopy);
       if (registerResult.changes === 1) {
         toast.success('Register successfull! Redirecting to login page...');
         history.replace('/login');
       }
-      console.log('registerResult ===', registerResult);
-
       if (registerResult.changes === 0) {
         toast.error('Register failed. Try again.');
         return;
       }
-
-      console.log('registerResult ===', registerResult);
-
-      console.log('submiting values ===', values);
     },
   });
 
@@ -56,18 +46,6 @@ function RegisterForm() {
     }
   }
 
-  // function rightClassesForInput(field) {
-  //   let resultClasses = 'email';
-
-  //   if (formik.touched[field] && formik.errors[field]) {
-  //     resultClasses += css['invalid'];
-  //   }
-  //   if (formik.touched[field] && formik.errors[field]) {
-  //     resultClasses += css['valid'];
-  //   }
-
-  //   return resultClasses;
-  // }
   return (
     <div className={css['form-container']}>
       <h3 className={css['form-title']}>Register here</h3>
@@ -80,7 +58,6 @@ function RegisterForm() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             type='email'
-            // className={rightClassesForInput('email')}
             className={formik.touched.email && formik.errors.email ? css['invalid'] : ''}
             id='email'
             name='email'

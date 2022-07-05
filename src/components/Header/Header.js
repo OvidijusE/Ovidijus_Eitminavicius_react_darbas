@@ -1,9 +1,9 @@
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { NavLink } from 'react-router-dom';
 import { useAuthCtx } from '../../store/authContext';
 import css from './Header.module.css';
 
-function Header(props) {
+function Header() {
   const { isUserLoggedIn, logout, userEmail } = useAuthCtx();
   return (
     <header className={css['header']}>
