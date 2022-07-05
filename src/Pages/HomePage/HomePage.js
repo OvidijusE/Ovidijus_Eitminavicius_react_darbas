@@ -40,4 +40,20 @@ function HomePage() {
   );
 }
 
+//   return (
+//     <div className={css['cards-container']}>
+//       <h1 className={css['title']}>Home Page</h1>
+//       <div className={css['cards-output']}>
+//         {skills.length === 0 ? (
+//           <h2>Loading skills</h2>
+//         ) : Array.isArray(skills) ? (
+//           <h2>No skills</h2>
+//         ) : (
+//           skills.map((sObj) => <Card key={sObj.id} {...sObj} />)
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
 export default HomePage;

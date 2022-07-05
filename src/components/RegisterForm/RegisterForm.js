@@ -39,18 +39,11 @@ function RegisterForm() {
     },
   });
 
-  function matchPass() {
-    const { password, repeatPassword } = initValues;
-    if (password !== repeatPassword) {
-      console.log('Passwords does not match');
-    }
-  }
-
   return (
     <div className={css['form-container']}>
       <h3 className={css['form-title']}>Register here</h3>
 
-      <form onSubmit={formik.handleSubmit} onBlur={matchPass} className={css['register-form']}>
+      <form onSubmit={formik.handleSubmit} className={css['register-form']}>
         <div className={css['form-group']}>
           <label htmlFor='email'>Email</label>
           <input

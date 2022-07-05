@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myFetch } from '../../utils';
@@ -71,6 +71,12 @@ function LoginForm() {
             <p className={css['error-msg']}>{formik.errors.password}</p>
           )}
         </div>
+        <p className={css['register-here']}>
+          New User?
+          <NavLink to={'/register'} className={css['reg-link']}>
+            Register here!
+          </NavLink>
+        </p>
         <Button submit primary>
           Login
         </Button>

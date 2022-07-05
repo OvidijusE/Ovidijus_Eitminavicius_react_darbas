@@ -9,7 +9,7 @@ export async function myFetch(url, method = 'GET', data = null) {
     const dataInJs = await resp.json();
     return dataInJs;
   } catch (error) {
-    throw new Error('Error myFectch', error);
+    throw new Error('Error myFetch', error);
   }
 }
 
@@ -28,7 +28,7 @@ export async function myFetchAuth(url, method = 'GET', token, data = null) {
     const dataInJs = await resp.json();
     return dataInJs;
   } catch (error) {
-    throw new Error('Error myFectchAuth', error);
+    throw new Error('Error myFetchAuth', error);
   }
 }
 

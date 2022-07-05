@@ -26,3 +26,13 @@
   border-radius: 0.2rem;
   min-height: 1.3rem;
 }
+
+.register-here {
+  margin: 0.1rem;
+}
+
+.reg-link {
+  margin-left: 0.4rem;
+  text-decoration: none;
+  color: maroon;
+}

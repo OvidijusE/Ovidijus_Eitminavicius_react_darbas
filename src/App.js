@@ -25,7 +25,7 @@ function App() {
         <ProtectedRoute path={'/add'}>
           <AddPage />
         </ProtectedRoute>
-        <ProtectedRoute exact path={'/home'}>
+        <ProtectedRoute path={'/home'}>
           <HomePage />
         </ProtectedRoute>
         <Route path={'*'}>
