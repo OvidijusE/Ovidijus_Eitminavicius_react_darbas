@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import { useAuthCtx } from '../../store/authContext';
-import { baseUrl, myFetch } from '../../utils';
+import { baseUrl, myFetch, myFetchAuth } from '../../utils';
 import Button from '../UI/Button/Button';
 import css from './AddForm.module.css';
 
@@ -15,7 +15,7 @@ const initValues = {
 
 function AddForm() {
   const history = useHistory();
-  const ctx = useAuthCtx();
+  const { token } = useAuthCtx();
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -30,28 +30,21 @@ function AddForm() {
     }),
 
     onSubmit: async (values) => {
-      const addResult = await myFetch(`${baseUrl}v1/content/skills`, 'POST', values);
+      const addResult = await myFetchAuth(`${baseUrl}v1/content/skills`, 'POST', token, values);
       console.log('addResult ===', addResult);
 
       if (addResult.msg === 'Added new skill to account') {
-        ctx.login(addResult.token, values.title);
+        // ctx.login(addResult.token, values.title);
         history.replace('/home');
       }
       console.log('addResult ===', addResult);
-      if (addResult.msg === 'Incorrect data sent') {
+      if (addResult.err === 'Incorrect data sent') {
         console.log('please check your data');
         return;
       }
       console.log('submiting values ===', values);
     },
   });
-
-  //   function matchPass() {
-  //     const { password, repeatPassword } = initValues;
-  //     if (password !== repeatPassword) {
-  //       console.log('Passwords does not match');
-  //     }
-  //   }
 
   // function rightClassesForInput(field) {
   //   let resultClasses = 'email';

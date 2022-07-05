@@ -34,7 +34,7 @@ function RegisterForm() {
       const registerResult = await myFetch(`${baseUrl}v1/auth/register`, 'POST', valuesCopy);
       if (registerResult.changes === 1) {
         toast.success('Register successfully! Redirecting to login page...');
-        ctx.login(registerResult.token, valuesCopy.email);
+        // ctx.login(registerResult.token, valuesCopy.email);
         history.replace('/login');
       }
       console.log('registerResult ===', registerResult);
