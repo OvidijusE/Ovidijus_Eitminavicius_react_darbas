@@ -33,17 +33,11 @@ function RegisterForm() {
       console.log('valuesCopy ===', valuesCopy);
       const registerResult = await myFetch(`${baseUrl}v1/auth/register`, 'POST', valuesCopy);
       if (registerResult.changes === 1) {
-        toast.success('Register successfully! Redirecting to login page...');
-        // ctx.login(registerResult.token, valuesCopy.email);
+        toast.success('Register successfull! Redirecting to login page...');
         history.replace('/login');
       }
       console.log('registerResult ===', registerResult);
-      // if (!registerResult.token) {
-      //   console.log('cannot register');
-      //   return;
-      // }
-      // ctx.register(registerResult.token);
-      // console.log('registerResult ===', registerResult);
+
       if (registerResult.changes === 0) {
         toast.error('Register failed. Try again.');
         return;

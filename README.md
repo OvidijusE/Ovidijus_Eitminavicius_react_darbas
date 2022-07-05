@@ -11,12 +11,12 @@ This project is about registering users, letting them log in, adding new skills 
 ### Executing program 🚀🚀
 
 - To run this project first install all npms.
+- After that, check the .env example, put your backend url.
+- Then start the server.
 
 ```
 npm install
 ```
-
-- Then start the server.
 
 ```
 npm start

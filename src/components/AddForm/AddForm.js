@@ -1,10 +1,9 @@
 import { useFormik } from 'formik';
-
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-
+import toast, { Toaster } from 'react-hot-toast';
 import { useAuthCtx } from '../../store/authContext';
-import { baseUrl, myFetch, myFetchAuth } from '../../utils';
+import { baseUrl, myFetchAuth } from '../../utils';
 import Button from '../UI/Button/Button';
 import css from './AddForm.module.css';
 
@@ -34,12 +33,12 @@ function AddForm() {
       console.log('addResult ===', addResult);
 
       if (addResult.msg === 'Added new skill to account') {
-        // ctx.login(addResult.token, values.title);
+        toast.success('New skill was added.');
         history.replace('/home');
       }
       console.log('addResult ===', addResult);
       if (addResult.err === 'Incorrect data sent') {
-        console.log('please check your data');
+        toast.error('Error while adding skill. Please try again.');
         return;
       }
       console.log('submiting values ===', values);
