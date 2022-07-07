@@ -1,0 +1,49 @@
+.title {
+  text-align: center;
+}
+
+.cards-output {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.loading {
+  text-align: center;
+}
+
+.add-skills-error {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-link {
+  text-decoration: none;
+  color: maroon;
+}
+
+@media screen and (min-width: 425px) {
+  .cards-output {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cards-output {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cards-output {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cards-output {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,23 @@
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/login
+Content-Type: application/json
+
+{
+"email": "testas10@testas.lt",
+"password": "123456"
+}
+
+###
+GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1Njk5NTQzN30.ZIQmOhJde24SIAUW7oE5dW7N5Rob9QWtO-pJVhFNMcM
+
+###
+POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTkzLCJlbWFpbCI6InRlc3RhczEwQHRlc3Rhcy5sdCIsImlhdCI6MTY1Njk5NTQzN30.ZIQmOhJde24SIAUW7oE5dW7N5Rob9QWtO-pJVhFNMcM
+
+{
+"title": "testas11",
+"description": "aprasymas11"
+
+}
+
