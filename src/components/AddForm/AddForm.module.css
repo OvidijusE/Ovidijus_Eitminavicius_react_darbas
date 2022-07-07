@@ -21,10 +21,6 @@
   margin: 0;
 }
 
-.valid {
-  border: 0.01rem solid lightgreen;
-}
-
 .invalid {
   border: 0.01rem solid tomato;
 }

@@ -37,8 +37,8 @@ function Header() {
                 onClick={() => {
                   logout();
                   isUserLoggedIn
-                    ? toast.success('You are logged out')
-                    : toast.error('Error in logout');
+                    ? toast.success('You are logged out.')
+                    : toast.error('Error in logout.');
                 }}
                 className={css['nav-link']}
                 to={'/login'}

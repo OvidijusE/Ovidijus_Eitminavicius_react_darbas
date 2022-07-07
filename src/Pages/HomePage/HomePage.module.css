@@ -7,6 +7,21 @@
   grid-template-columns: 1fr;
 }
 
+.loading {
+  text-align: center;
+}
+
+.add-skills-error {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-link {
+  text-decoration: none;
+  color: maroon;
+}
+
 @media screen and (min-width: 425px) {
   .cards-output {
     display: grid;

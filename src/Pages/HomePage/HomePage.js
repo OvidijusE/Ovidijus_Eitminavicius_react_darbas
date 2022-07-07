@@ -1,11 +1,9 @@
-// import Card from '../components/Card/Card';
 import { useState, useEffect } from 'react';
 import { useAuthCtx } from '../../store/authContext';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { baseUrl, myFetchAuth } from '../../utils';
 import Card from '../../components/Card/Card';
 import css from './HomePage.module.css';
-// import toast from 'react-hot-toast';
 
 function HomePage() {
   const history = useHistory();
@@ -30,9 +28,14 @@ function HomePage() {
       <h1 className={css['title']}>Home Page</h1>
       <div className={css['cards-output']}>
         {!Array.isArray(skills) ? (
-          <h2>Loading...</h2>
+          <h2 className={css['loading']}>Loading...</h2>
         ) : skills.length === 0 ? (
-          <h2>No skills found. Please add a new skill.</h2>
+          <div className={css['add-skills-error']}>
+            <h2 className={css['skills-error']}>No skills found. Please add a new skill.</h2>
+            <NavLink to={'/add'} className={css['add-link']}>
+              Add new skill!
+            </NavLink>
+          </div>
         ) : (
           skills.length > 0 && skills.map((skObj) => <Card key={skObj.id} {...skObj} />)
         )}
@@ -40,34 +43,5 @@ function HomePage() {
     </div>
   );
 }
-//   return (
-//     <div className={css['cards-container']}>
-//       <h1 className={css['title']}>Home Page</h1>
-//       <div className={css['cards-output']}>
-//         {/* {skills.length === 0 && <h2>No skills found! Add a new one.</h2>} */}
-//         {skills.length === 0 && <h2>Loading skills...</h2>}
-//         {skills.map((sObj) => (
-//           <Card key={sObj.id} {...sObj} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-//   return (
-//     <div className={css['cards-container']}>
-//       <h1 className={css['title']}>Home Page</h1>
-//       <div className={css['cards-output']}>
-//         {skills.length === 0 ? (
-//           <h2>Loading skills</h2>
-//         ) : Array.isArray(skills) ? (
-//           <h2>No skills</h2>
-//         ) : (
-//           skills.map((sObj) => <Card key={sObj.id} {...sObj} />)
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
 
 export default HomePage;

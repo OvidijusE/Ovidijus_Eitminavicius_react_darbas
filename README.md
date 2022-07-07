@@ -22,6 +22,6 @@ npm install
 npm start
 ```
 
-## Authors 👨‍👩‍👧‍👦
+## Author 👨‍👩‍👧‍👦
 
 Ovidijus Eitminavicius
